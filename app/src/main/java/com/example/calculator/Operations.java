@@ -24,10 +24,8 @@ public class Operations {
                 if(!stack.isEmpty()){
                     temp.add(stack.remove(stack.size()-1));
                 }
-                System.out.println("first");
             } else if (stack.isEmpty()) {
                 stack.add(splits[i]);
-                System.out.println("second");
             } else{
                 temp.add(splits[i+1]);
                 temp.add(splits[i]);
@@ -35,14 +33,11 @@ public class Operations {
                 while(!stack.isEmpty()){
                     temp.add(stack.remove(stack.size()-1));
                 }
-                System.out.println("third");
             }
 
         }
         String[] postfix = new String[temp.size()];
-        System.out.println("-----");
         for(int i = 0; i< temp.size();i++){
-            System.out.println(temp.get(i));
             postfix[i] = temp.get(i);
         }
         return postfix;
@@ -77,6 +72,12 @@ public class Operations {
             }
         }
         return stack.remove(stack.size()-1);
+    }
+
+    String percentage(){
+        Float d = Float.parseFloat(this.text);
+        String r = String.valueOf(d/100);
+        return r;
     }
 
 }

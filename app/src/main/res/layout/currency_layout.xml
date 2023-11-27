@@ -26,15 +26,58 @@
     </LinearLayout>
 
 
-
-    <TextView
-        android:id="@+id/solution_text"
+    <LinearLayout
+        android:id="@+id/text_area"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/operations_buttons"
+        android:layout_height="wrap_content"
         android:layout_above="@+id/buttonPanel"
-        android:textSize="40dp"
-        android:textAlignment="textEnd"/>
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/insert_currency_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="20dp">
+
+            <Spinner
+                android:id="@+id/currency_name1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                />
+
+            <TextView
+                android:id="@+id/currency_amount1"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="80dp"
+                android:textSize="20dp"
+                android:textAlignment="textEnd"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/insert_currency_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="20dp">
+
+            <Spinner
+                android:id="@+id/currency_name2"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/currency_amount2"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="80dp"
+                android:textSize="20dp"
+                android:textAlignment="textEnd"/>
+        </LinearLayout>
+    </LinearLayout>
 
 
     <LinearLayout
@@ -53,7 +96,7 @@
                 android:layout_width="72dp"
                 android:layout_height="72dp"
                 app:cornerRadius="36dp"
-                android:textSize="23dp"
+                android:textSize="20dp"
                 android:layout_margin="1dp"
                 android:id="@+id/ac_btn"
                 android:text="AC"
@@ -68,22 +111,13 @@
                 android:text="C"
                 android:backgroundTint="@color/purple_500"/>
             <com.google.android.material.button.MaterialButton
-                android:layout_width="72dp"
+                android:layout_width="170dp"
                 android:layout_height="72dp"
                 app:cornerRadius="36dp"
                 android:textSize="32dp"
                 android:layout_margin="12dp"
-                android:id="@+id/percentage_btn"
-                android:text="%"
-                android:backgroundTint="@color/purple_500"/>
-            <com.google.android.material.button.MaterialButton
-                android:layout_width="72dp"
-                android:layout_height="72dp"
-                app:cornerRadius="36dp"
-                android:textSize="32dp"
-                android:layout_margin="12dp"
-                android:id="@+id/div_btn"
-                android:text="/"
+                android:id="@+id/convert_btn"
+                android:text="Convert"
                 android:backgroundTint="@color/purple_500"/>
         </LinearLayout>
         <LinearLayout
@@ -117,15 +151,6 @@
                 android:id="@+id/nine_btn"
                 android:text="9"
                 android:backgroundTint="@color/purple_500"/>
-            <com.google.android.material.button.MaterialButton
-                android:layout_width="72dp"
-                android:layout_height="72dp"
-                app:cornerRadius="36dp"
-                android:textSize="32dp"
-                android:layout_margin="12dp"
-                android:id="@+id/sub_btn"
-                android:text="*"
-                android:backgroundTint="@color/purple_500"/>
         </LinearLayout><LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
@@ -156,15 +181,6 @@
             android:layout_margin="12dp"
             android:id="@+id/six_btn"
             android:text="6"
-            android:backgroundTint="@color/purple_500"/>
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="72dp"
-            android:layout_height="72dp"
-            app:cornerRadius="36dp"
-            android:textSize="32dp"
-            android:layout_margin="12dp"
-            android:id="@+id/minus_btn"
-            android:text="-"
             android:backgroundTint="@color/purple_500"/>
     </LinearLayout><LinearLayout
         android:layout_width="wrap_content"
@@ -197,15 +213,6 @@
             android:id="@+id/three_btn"
             android:text="3"
             android:backgroundTint="@color/purple_500"/>
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="72dp"
-            android:layout_height="72dp"
-            app:cornerRadius="36dp"
-            android:textSize="32dp"
-            android:layout_margin="12dp"
-            android:id="@+id/plus_btn"
-            android:text="+"
-            android:backgroundTint="@color/purple_500"/>
     </LinearLayout><LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
@@ -236,15 +243,6 @@
             android:layout_margin="12dp"
             android:id="@+id/delimeter_btn"
             android:text="."
-            android:backgroundTint="@color/purple_500"/>
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="72dp"
-            android:layout_height="72dp"
-            app:cornerRadius="36dp"
-            android:textSize="32dp"
-            android:layout_margin="12dp"
-            android:id="@+id/equals_btn"
-            android:text="="
             android:backgroundTint="@color/purple_500"/>
     </LinearLayout>
     </LinearLayout>

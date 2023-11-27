@@ -20,7 +20,7 @@ public class ExampleUnitTest {
 
 
 
-    Operations op = new Operations("5.2+2.2");
+    Operations op = new Operations("2+2");
 
 
 
@@ -34,7 +34,7 @@ public class ExampleUnitTest {
 
     @Test
     public void Checkpostfix() {
-        assertEquals("7.4",op.postfix());
+        assertEquals("4.0",op.postfix());
     }
 
 

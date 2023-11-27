@@ -2,9 +2,11 @@ package com.example.calculator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -13,6 +15,7 @@ public class MainActivity extends AppCompatActivity{
     Button btn_one,btn_two,btn_three,btn_four,btn_five,btn_six,btn_seven,btn_eight,btn_nine,btn_zero;
     Button btn_plus,btn_minus,btn_sub,btn_div,btn_percentage,btn_equals,btn_ac,btn_c, btn_delimeter;
     TextView solution_text;
+    ImageButton currency_btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,7 +42,15 @@ public class MainActivity extends AppCompatActivity{
         btn_ac = findViewById(R.id.ac_btn);
         btn_c = findViewById(R.id.c_btn);
         btn_delimeter = findViewById(R.id.delimeter_btn);
+        currency_btn = findViewById(R.id.currency_btn);
 
+        currency_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this,CurrencyActivity.class);
+                startActivity(i);
+            }
+        });
 
         btn_one.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,6 +95,14 @@ public class MainActivity extends AppCompatActivity{
         btn_six.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                solution_text.append(btn_six.getText().toString());
+
+            }
+        });
+
+        btn_seven.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 solution_text.append(btn_seven.getText().toString());
 
             }
@@ -112,28 +131,82 @@ public class MainActivity extends AppCompatActivity{
 
             }
         });
+
+
+        btn_delimeter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                solution_text.append(btn_delimeter.getText().toString());
+
+            }
+        });
+        btn_plus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                solution_text.append(btn_plus.getText().toString());
+
+            }
+        });
+
+        btn_minus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                solution_text.append(btn_minus.getText().toString());
+
+            }
+        });
+
+        btn_sub.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                solution_text.append(btn_sub.getText().toString());
+
+            }
+        });
+
+        btn_div.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                solution_text.append(btn_div.getText().toString());
+
+            }
+        });
+
+        btn_ac.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                solution_text.setText("");
+
+            }
+        });
+
+        btn_c.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!solution_text.getText().toString().equals(""))
+                    solution_text.setText(solution_text.getText().toString().substring(0,solution_text.length()-1));
+
+            }
+        });
+
+        btn_equals.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Operations op = new Operations(solution_text.getText().toString());
+                solution_text.setText(op.postfix());
+            }
+        });
+
+        btn_percentage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Operations op = new Operations(solution_text.getText().toString());
+                solution_text.setText(op.percentage());
+
+            }
+        });
     }
 
-//    @Override
-//    public void onClick(View view) {
-//        Button button = (Button) view;
-//        String text = solution_text.getText().toString();
-//
-//        if(btn_ac.callOnClick()){
-//            solution_text.setText("0");
-//        }
-//        if(btn_one.getText().toString() == "1"){
-//            solution_text.append(button.getText().toString());
-//            Toast.makeText(this,"click",Toast.LENGTH_LONG);
-//        }
-//        if(btn_c.callOnClick()){
-//          String newText = text.substring(0,text.length()-1);
-//          solution_text.setText(newText);
-//        }
-//        else{
-//           solution_text.append(button.getText().toString());
-//        }
-//    }
 
 
 
